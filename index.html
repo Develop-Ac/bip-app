@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitor de Código de Barras PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+    #result { margin-top: 20px; font-size: 1.2em; }
+    #video { width: 100%; max-width: 400px; margin: 20px auto; display: none; }
+  </style>
+</head>
+<body>
+  <h1>Leitor de Código de Barras</h1>
+  <button id="start-btn">Abrir Câmera</button>
+  <video id="video" autoplay></video>
+  <div id="result"></div>
+  <script src="quagga.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
